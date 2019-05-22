@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>choose pokemon</title>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link href="style.css" rel="stylesheet" />
+        <script type="text/javascript">
+    $(function(){$.getJSON("https://dev-util.edyst.com/challenge/pokemons/random",function(data){
+        $("#name1").text(data[0].name);
+        $("#name2").text(data[1].name);
+        $("#name3").text(data[2].name);
+
+        $("#img11").attr("src",data[0].sprite);
+        $("#img22").attr("src",data[1].sprite);
+        $("#img33").attr("src",data[2].sprite);
+
+        $("#desc1").text(data[0].description);
+        $("#desc2").text(data[1].description);
+        $("#desc3").text(data[2].description);
+
+        $("#card1").css("background-color",data[0]["cardColors"].bg);
+        $("#card2").css("background-color",data[1]["cardColors"].bg);
+        $("#card3").css("background-color",data[2]["cardColors"].bg); 
+        
+           $("#img11").css("background-color",data[0]["cardColors"].imgbg);
+           $("#img22").css("background-color",data[1]["cardColors"].imgbg);
+           $("#img33").css("background-color",data[2]["cardColors"].imgbg);
+
+        $("#text1").css("background-color",data[0]["cardColors"].textbg);
+        $("#text2").css("background-color",data[1]["cardColors"].textbg);
+        $("#text3").css("background-color",data[2]["cardColors"].textbg);
+      });
+    });
+  </script>
+  </head>
+    <body>
+        <div class="bg-fluid">
+            <div class="row">
+                <div class="col1" id="card1">
+                <div class="tag1">Squirtle</div>
+                 <div class="data1" id="text1">
+                <div class="poke" id="name1"><h1>Squirtle</h1></div> 
+                    <p class="poke1" id="desc1">Squirtle is a small pokemon that resembles a light blue turtlr. While it typically
+                        walks on its two short legs. it has been shows to run on all four in Super smash
+                        Bros Brawl
+                    </p>
+                </div> 
+                <img class="img1" id="img11" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="squirtle" style="width: 75%" height="200">
+            
+                </div>
+                <div class="col2" id="card2">
+                <div class="tag2">Bulbasaur</div>
+                <div class="data2" id="text2">
+                <div class="poke" id="name2"><h1>Bulbasaur</h1></div>
+                    <p class="poke1" id="desc2">Squirtle is a small Pokemon that resembles a light blue turtle.
+                        While it typically walks on its two short legs, it has been shown to run 
+                        on all fours in Super Smash Bros, Brawl.
+                    </p>
+                </div> 
+                    <img class="img2" id="img22" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="bullbasaur" style="width: 75%" height="200">
+                </div>
+                <div class="col3" id="card3">
+                <div class="tag3">Charmender</div>
+                <div class="data3" id="text3">
+                <div class="poke" id="name3"><h1>Charmender</h1></div>
+                    <p class="poke1" id="desc3"> Charmander is a small,bipedal-lizard like pokemon native to kanto.They have blue-eyes,red-orange screen,three-clawed toes,
+                        yellow-bellies and yellow-soles under their feet.
+                    </p>
+                </div> 
+                    <img class="img3" id="img33" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Carmender" style="width: 75%;" height="200">
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>
